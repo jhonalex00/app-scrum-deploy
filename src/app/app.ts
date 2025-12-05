@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+// Quitamos RouterOutlet porque no lo usamos
+import { DemoComponent } from './demo/demo';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [DemoComponent],   // Solo DemoComponent
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('app-scrum-deploy');
+  title = 'app-scrum-deploy';
 }
